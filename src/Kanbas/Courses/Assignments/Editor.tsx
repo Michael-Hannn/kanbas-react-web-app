@@ -1,25 +1,36 @@
 export default function AssignmentEditor() {
     return (
+  
+     
+
       <div id="wd-assignments-editor">
+        <div style={{ textAlign: 'left', marginLeft: '230px'}}>
         <p>
-        <label htmlFor="wd-name"><b>Assignment Name</b></label>
+        <label htmlFor="wd-name" className="form-label">
+          <b>Assignment Name</b></label>
         </p>
-        <input id="wd-name" value="A1 - ENV + HTML" /><br /><br />
-        <textarea id="wd-description" cols={50} rows={12}>
+        </div>
+        <div style={{ textAlign: 'center'}}>
+        <input id="wd-name" value="A1 - ENV + HTML" className="col-8 text-start" /><br /><br />
+        </div>
+        <div style={{ textAlign: 'center'}}>
+        <textarea id="wd-description" cols={50} rows={12} className="col-8 text-start">
           The assignment is available online Submit a link to the landing page of your
           Web application running on Netlify. The landing page should include the following:
           Your full name and section Links to each of the lab assignments Link to the 
           Kanbas application Links to all relevant source code repositories The Kanbas 
           application should include a link to navigate back to the landing page.
         </textarea>
+        </div>
         <br />
-        <table>
+
+        <table style={{ textAlign: 'left', marginLeft: '630px'}}>
           <tr>
             <td align="right" valign="top">
-              <label htmlFor="wd-points">Points</label>
+              <label htmlFor="wd-points" className="text-right">Points</label>
             </td>
             <td>
-              <input id="wd-points" value={100} />
+              <input id="wd-points" value={100} style={{width: '350px'}} />
             </td>
           </tr>
           <br/>
@@ -28,7 +39,7 @@ export default function AssignmentEditor() {
               <label htmlFor="wd-group">Assignment Group</label>
             </td>
             <td>
-                <select id="wd-group">
+                <select id="wd-group" style={{width: '400px'}}>
                 <option selected value="ASSIGNMENTS">ASSIGNMENTS</option>
                 <option value="QUIZZES">QUIZZES</option>
                 </select>
@@ -40,51 +51,60 @@ export default function AssignmentEditor() {
               <label htmlFor="wd-display-grade-as">Display Grade as</label>
             </td>
             <td>
-                <select id="wd-display-grade-as">
+                <select id="wd-display-grade-as" style={{width: '400px'}}>
                 <option selected value="Percentage">Percentage</option>
                 <option value="Decimal">Decimal</option>
                 </select>
             </td>
           </tr>
+        </table>
+
+        <table style={{ textAlign: 'left', marginLeft: '300px'}}>
           <p></p>
-          <tr>
-            <td align="right" valign="top">
-              <label htmlFor="wd-submission-type">Submission Type</label>
-            </td>
-            <td>
-                <select id="wd-submission-type">
-                <option selected value="Online">Online</option>
-                <option value="In Person">In Person</option>
-                </select>
-            </td>
-          </tr>
-          <tr>
-          <td></td>
-                <td align="left" valign="top">
-                <label htmlFor="wd-Online-Entry">Online Entry Options</label><br/>
-                
-                <input type="checkbox" name="text-entry" id="wd-text-entry"/>
-                <label htmlFor="wd-text-entry">Text Entry</label><br/>
+          <div>
+              <div className="wd-asignment-border">
+              <tr>
+                <td align="right" valign="top">
+                  <label htmlFor="wd-submission-type">Submission Type</label>
+                </td>
+                <td>
+                    <select id="wd-submission-type" style={{textAlign: 'right'}}>
+                    <option selected value="Online">Online</option>
+                    <option value="In Person">In Person</option>
+                    </select>
+                </td>
+              </tr>
+              <tr>
+              <td></td>
+                    <td align="left" valign="top">
+                    <label htmlFor="wd-Online-Entry"><strong>Online Entry Options</strong></label><br/>
+                    
+                    <input type="checkbox" name="text-entry" id="wd-text-entry"/>
+                    <label htmlFor="wd-text-entry">Text Entry</label><br/>
 
-                <input type="checkbox" name="website-url" id="wd-website-url"/>
-                <label htmlFor="wd-website-url">Website URL</label><br/>
+                    <input type="checkbox" name="website-url" id="wd-website-url"/>
+                    <label htmlFor="wd-website-url">Website URL</label><br/>
 
-                <input type="checkbox" name="media-recording" id="wd-media-recording"/>
-                <label htmlFor="wd-media-recording">Media Recordings</label><br/>
+                    <input type="checkbox" name="media-recording" id="wd-media-recording"/>
+                    <label htmlFor="wd-media-recording">Media Recordings</label><br/>
 
-                <input type="checkbox" name="student-annotation" id="wd-student-annotation"/>
-                <label htmlFor="wd-student-annotation">Student Annotation</label><br/>
+                    <input type="checkbox" name="student-annotation" id="wd-student-annotation"/>
+                    <label htmlFor="wd-student-annotation">Student Annotation</label><br/>
 
-                <input type="checkbox" name="file-uploads" id="wd-file-uploads"/>
-                <label htmlFor="wd-file-uploads">File Uploads</label>
-                </td> 
-          </tr>
+                    <input type="checkbox" name="file-uploads" id="wd-file-uploads"/>
+                    <label htmlFor="wd-file-uploads">File Uploads</label>
+                    </td> 
+              </tr>
+              </div>
+            </div>
+
+          <div className="wd-asignment-border">
           <br/>
           <tr>
             <td></td>
             <td align="left" valign="top">
               <label htmlFor="wd-assign-to">Assign Assign to</label><br/>
-              <input placeholder="Everyone" /><br/>
+              <input placeholder="Everyone      X" /><br/>
             </td>
           </tr>
           <br/>
@@ -111,14 +131,18 @@ export default function AssignmentEditor() {
                 value="2024-05-20"/><br/>
             </td>
           </tr>
-          <tr>
-          <td></td>
-            <td align="right" valign="top">
-            <button>Cancel</button> <button>Save</button>
-            </td>
-          </tr>
-
+          </div>
         </table>
+    
+        <div style={{marginLeft: '950px'}} className='mt-2'>
+          <button id="wd-Save" className="btn btn-medd btn-danger" style={{ marginRight: '10px' }}>
+        Save</button>
+        
+        <button id="wd-Cancel" className="btn btn-med btn-secondary">
+
+        Cancel</button>
+        </div >
+          
       </div>
   );}
   

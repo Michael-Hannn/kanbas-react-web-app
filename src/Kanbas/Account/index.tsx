@@ -5,8 +5,10 @@ import Profile from "./Profile";
 import Signup from "./Signup";
 export default function Account() {
   return (
-    <div id="wd-account-screen">
-      <h2>Account</h2>  
+    <div id="wd-account-screen" className="wd-account-border" style={{width: '350px', height: '900px' }}>
+       <div className="wd-account-border mb-2" style={{width: '330px'}}>
+      <h2><strong>Account</strong></h2>  
+      </div>
       <table>
         <tr>
           <td valign="top">
