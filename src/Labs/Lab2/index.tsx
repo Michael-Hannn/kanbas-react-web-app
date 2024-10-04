@@ -246,7 +246,7 @@ Here's another paragraph using a different ID and a different look and
         <div className="wd-float-left wd-dimension-portrait wd-bg-color-red">
           Red </div>
         <img className="wd-float-right"
-          src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"/>
+          src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg" alt="picture"/>
         <div className="wd-float-done"></div>
       </div>
     </div>
