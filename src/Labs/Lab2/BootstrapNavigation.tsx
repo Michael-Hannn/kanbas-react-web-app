@@ -25,7 +25,7 @@ export default function BootstrapNavigation() {
         <div className="card"
             style={{ width: "18rem" }}>
             <img src="images/stacked.jpg"
-                alt="picture"
+                alt="the stacked baloon"
                 className="card-img-top" />
             <div className="card-body">
             <h5 className="card-title">
