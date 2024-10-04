@@ -1,7 +1,5 @@
 import ModulesControls from "./ModulesControls";
 import ModuleControlButtons from "./ModuleControlButtons";
-import { IoEllipsisVertical } from "react-icons/io5";
-import GreenCheckmark from "./GreenCheckmark";
 import LessonControlButtons from "./LessonControlButtons";
 import { BsGripVertical } from "react-icons/bs";
 

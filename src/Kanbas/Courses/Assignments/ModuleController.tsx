@@ -1,7 +1,4 @@
 import { FaPlus } from "react-icons/fa6";
-import GreenCheckmark from "../Modules/GreenCheckmark";
-import { IoBanOutline } from "react-icons/io5";
-import ModuleControlButtons from "../Modules/ModuleControlButtons";
 import { HiMiniMagnifyingGlass } from "react-icons/hi2";
 
 export default function ModulesController() {

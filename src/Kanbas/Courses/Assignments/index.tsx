@@ -1,4 +1,3 @@
-import GreenCheckmark from "../Modules/GreenCheckmark";
 import LessonControlButtons from "../Modules/LessonControlButtons";
 import ModulesController from "./ModuleController";
 import { BsGripVertical } from "react-icons/bs";
