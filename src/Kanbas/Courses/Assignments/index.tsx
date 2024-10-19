@@ -3,8 +3,12 @@ import ModulesController from "./ModuleController";
 import { BsGripVertical } from "react-icons/bs";
 import ModuleControlButtons from "../Modules/ModuleControlButtons";
 import { LuClipboardSignature } from "react-icons/lu";
+import { useParams } from "react-router";
+import * as db from "../../Database";
 
 export default function Assignments() {
+  const { cid } = useParams();
+  const assignments = db.assignments;
     return (
       <div>
       <ModulesController />
@@ -18,50 +22,23 @@ export default function Assignments() {
         </div>
         <ul className="wd-lessons list-group rounded-0">
 
-        <li className="wd-lesson list-group-item p-3 ps-1">
+
+
+        {assignments.filter((assignment) => assignment.course === cid).map((assignment) => (
+        <li key={assignment._id} className="wd-lesson list-group-item p-3 ps-1">
         <BsGripVertical className="me-2 fs-3" />
         <LuClipboardSignature className="me-2 fs-3" style={{ color: 'green' }} />
-        <a className="wd-assignment-link" href="#/Kanbas/Courses/1234/Assignments/123">
-          <strong>A1 - ENV + HTML</strong>
+        <a className="wd-assignment-link" href={`#/Kanbas/Courses/${assignment.course}/Assignments/${assignment._id}`}>
+          <strong>{assignment.title}</strong>
           </a>
           <LessonControlButtons />
 
           <div className="text-start ms-5">
 
-          <p>Multiple Modules | <b>Not available until</b> May 6 at 12:00am |</p>
-            <p><b>Due</b> May 13 at 11:59pm | 100 pts</p>
+          <p>Multiple Modules | <b>Not available until</b> {assignment.openDate} |</p>
+            <p><b>Due</b> {assignment.dueDate} | 100 pts</p>
           </div>
-          </li>
-
-          <li className="wd-lesson list-group-item p-3 ps-1">
-          <BsGripVertical className="me-2 fs-3" />
-          <LuClipboardSignature className="me-2 fs-3" style={{ color: 'green' }} />
-          <a className="wd-assignment-link" href="#/Kanbas/Courses/1234/Assignments/123">
-          <strong>A2 - CSS + BOOTSTRAP</strong>
-          </a>
-            <LessonControlButtons />
-
-            <div className="text-start ms-5">
-
-            <p>Multiple Modules | <b>Not available until</b> May 13 at 12:00am |</p>
-            <p><b>Due</b> May 20 at 11:59pm | 100 pts</p>
-            </div>
-          </li>
-
-          <li className="wd-lesson list-group-item p-3 ps-1">
-          <BsGripVertical className="me-2 fs-3" />
-          <LuClipboardSignature className="me-2 fs-3" style={{ color: 'green' }} />
-          <a className="wd-assignment-link" href="#/Kanbas/Courses/1234/Assignments/123">
-          <strong>A3 - JAVASCRIPT + REACT</strong>
-          </a>
-            <LessonControlButtons />
-
-            <div className="text-start ms-5">
-
-            <p>Multiple Modules | <b>Not available until</b> May 20 at 12:00am |</p>
-                <p><b>Due</b> May 27 at 11:59pm | 100 pts</p>
-            </div>
-          </li>
+          </li> ))}
       </ul>
       </li>
       </ul>

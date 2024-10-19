@@ -1,8 +1,15 @@
+import { useParams } from "react-router";
+import * as db from "../../Database";
+
 export default function AssignmentEditor() {
+  const { aid } = useParams();
+  const assignments = db.assignments;
+
+  const assignment = assignments.find(assign => assign._id === aid);
+
     return (
   
-     
-
+    
       <div id="wd-assignments-editor">
         <div style={{ textAlign: 'left', marginLeft: '230px'}}>
         <p>
@@ -10,9 +17,11 @@ export default function AssignmentEditor() {
           <b>Assignment Name</b></label>
         </p>
         </div>
+        
         <div style={{ textAlign: 'center'}}>
-        <input id="wd-name" value="A1 - ENV + HTML" className="col-8 text-start" /><br /><br />
+        <input id="wd-name" value={assignment?.title} className="col-8 text-start" /><br /><br />
         </div>
+        
         <div style={{ textAlign: 'center'}}>
         <textarea id="wd-description" cols={50} rows={12} className="col-8 text-start">
           The assignment is available online Submit a link to the landing page of your
